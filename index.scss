@@ -1,0 +1,156 @@
+$primary-color: #588f27;
+$primary-light: #a9cf54;
+$secondary-color: #f7e967;
+$background-color: #333;
+
+@import url('//fonts.googleapis.com/css?family=Montserrat+Alternates|Montserrat');
+
+*, :before, :after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  font-family: 'Montserrat';
+}
+
+body {
+  background: $background-color;
+}
+
+.app {
+  display: block;
+  width: -webkit-fit-content;
+  width: fit-content;  
+  margin: 5% auto 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+
+  &--link {
+    text-decoration: none;
+    color: $primary-light;
+    font-family: 'Montserrat Alternates';
+    font-weight: normal;
+    text-transform: none;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.board {
+  position: relative;
+  text-align: center;
+ // background: black;
+ // margin: 1rem;
+}
+
+/*
+.grid {
+  margin: 0.5rem;
+  background: $background-color;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid #04bfbf;
+}
+*/
+
+.row {
+  line-height: 0.5;
+}
+
+.cell {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0.5px;
+  cursor: pointer;
+  
+  &--dead {
+    background: black;
+  }
+  
+  &--immature {
+    background: $primary-light;
+  }
+  
+  &--mature {
+    background: $primary-color;
+  } 
+}
+
+.setting {
+  width: 100%;
+  text-align: center;
+
+  &--size {
+    display: inline-block;
+  }
+  
+  &--speed {
+    margin-left: 1.52rem;
+    display: inline-block;
+    text-align: right;
+  }
+  
+  
+}
+
+.control { 
+  padding: 0.5rem;
+  background: $secondary-color;
+  border: 2px solid black;
+  border-left: none;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  &:hover {
+    background: $primary-color;
+  }
+  
+  &--title {
+    cursor: default;
+    background: gray;
+    border-left: 2px solid black;
+    &:hover {
+      background: gray;
+    }
+  }
+  
+  &--play {
+    border-left: 2px solid black;
+  }
+}
+
+.display {
+  padding: 0.5rem;
+  width: 6.5rem;
+  height: 2.41rem;
+  
+  text-align: right;
+  cursor: default;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: -2.41rem;
+  
+  &--name {
+    display: inline-block;
+    position: absolute;
+    left: 0.5rem;
+  }
+  
+  &--count {
+    display: inline-block;
+    position: absolute;
+    left: 3.5rem;
+  }
+}
+
+.active {
+  background: $primary-light;
+}
